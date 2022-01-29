@@ -1,4 +1,5 @@
 import { createStore, compose } from "redux";
+import reducer from "./reducers/index";
 
 const composeEnhancers =
   typeof window === 'object' &&
@@ -11,6 +12,6 @@ const configureStore = preloadedState => createStore (
     composeEnhancers(),
 );
 
-const store = configureStore( {} );
+const store = configureStore({});
 
 export default store;
