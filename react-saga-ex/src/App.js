@@ -18,7 +18,7 @@ const App = () => {
     dispatch(decreaseCount());
     
   }
-
+ 
   return (
     <div>
       <button onClick={ handleIncrease }>+1</button>
