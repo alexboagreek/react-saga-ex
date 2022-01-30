@@ -1,11 +1,31 @@
-
+import { useSelector, useDispatch  } from 'react-redux';
+import { increaseCount, decreaseCount } from './redux/actions/actionCreator';
 import './App.css';
 
 
 const App = () => {
-  return (
-    <h1>React Saga Start</h1>
 
+  const count = useSelector(store => store?.counter?.count);
+  const dispatch = useDispatch();
+
+
+  const handleIncrease = () => {
+    dispatch(increaseCount());
+    
+  }
+
+  const handleDecrease = () => {
+    dispatch(decreaseCount());
+    
+  }
+
+  return (
+    <div>
+      <button onClick={ handleIncrease }>+1</button>
+      <button onClick={ handleDecrease }>-1</button>
+      <h1>{ count }</h1>
+    </div>
+   
   )
 }
 export default App;
